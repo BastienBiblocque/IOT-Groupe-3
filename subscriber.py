@@ -14,7 +14,7 @@ db_config = {
     'user': 'iot',
     'password': 'iot',
     'host': 'mysql',  # Nom du service dans docker-compose
-    'database': 'sensor_data',
+    'database': 'temperatures_data',
 }
 
 def connect_db():
