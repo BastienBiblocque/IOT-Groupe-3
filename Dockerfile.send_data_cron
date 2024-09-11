@@ -1,0 +1,24 @@
+# Utiliser une image de base
+FROM python:3.9-slim
+
+# Installer cron
+RUN apt-get update && apt-get install -y cron
+
+# Créer un répertoire pour les scripts
+WORKDIR /app
+
+# Copier le script et le fichier crontab dans le conteneur
+COPY send_unsent_data.py /app/
+COPY crontab /etc/cron.d/send_unsent_data
+
+# Appliquer les permissions nécessaires pour le fichier crontab
+RUN chmod 0644 /etc/cron.d/send_unsent_data
+
+# Appliquer les permissions nécessaires pour le script
+RUN chmod +x /app/send_unsent_data.py
+
+# Créer un répertoire pour les logs de cron
+RUN mkdir /var/log/cron
+
+# Lancer cron en arrière-plan et le programme Python
+CMD cron && tail -f /var/log/cron/cron.log
