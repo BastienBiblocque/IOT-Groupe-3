@@ -1,34 +1,59 @@
-version: '3'
+version: '3.8'
 services:
-  mosquitto:
-    image: eclipse-mosquitto
-    container_name: mosquitto
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-    volumes:
-      - ./mosquitto/config:/mosquitto/config
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
+    mqtt:
+        image: eclipse-mosquitto:2.0
+        restart: unless-stopped
+        volumes:
+            - './mosquitto-data:/mosquitto'
+        ports:
+            - '1883:1883'
+            - '9001:9001'
+        command: 'mosquitto -c /mosquitto-no-auth.conf'
 
-  zigbee2mqtt:
-    image: koenkk/zigbee2mqtt
-    container_name: zigbee2mqtt
-    volumes:
-      - ./zigbee2mqtt/data:/app/data
-      - /run/udev:/run/udev:ro
-    devices:
-      - /dev/ttyUSB0:/dev/ttyUSB0 # Changez cela selon votre clé USB Zigbee
-    depends_on:
-      - mosquitto
-    restart: always
+    zigbee2mqtt:
+        container_name: zigbee2mqtt
+        restart: unless-stopped
+        image: koenkk/zigbee2mqtt
+        volumes:
+            - ./zigbee2mqtt-data:/app/data
+            - /run/udev:/run/udev:ro
+        ports:
+            - 8080:8080
+        environment:
+            - TZ=Europe/Berlin
+        devices:
+            - /dev/ttyUSB0:/dev/ttyUSB0
 
-  subscriber:
-    build:
-      context: .
-      dockerfile: Dockerfile.subscriber
-    environment:
-      - MQTT_BROKER=mosquitto
-      - HTTP_ENDPOINT=http://backend:5000/api/temperature
-    depends_on:
-      - mosquitto
+        # Service pour MySQL
+    mysql:
+        image: mysql:8.0  # Utilise l'image MySQL officielle
+        container_name: mysql
+        environment:
+          - MYSQL_ROOT_PASSWORD=rootpassword    # Remplace par ton mot de passe root
+          - MYSQL_DATABASE=temperatures_data          # Nom de la base de données
+          - MYSQL_USER=iot                     # Utilisateur MySQL
+          - MYSQL_PASSWORD=iot         # Mot de passe de l'utilisateur
+        ports:
+          - "3306:3306"  # Exposer le port MySQL
+        volumes:
+          - mysql_data:/var/lib/mysql  # Volume pour persister les données
+          - ./mysql-init:/docker-entrypoint-initdb.d
+
+    subscriber:
+      build:
+        context: .
+        dockerfile: Dockerfile.subscriber
+      environment:
+        - MQTT_BROKER=mosquitto
+        - HTTP_ENDPOINT=http://backend:5000/api/temperature
+        - MYSQL_HOST=mysql         # Le service MySQL est accessible par ce nom
+        - MYSQL_DATABASE=temperatures_data
+        - MYSQL_USER=iot
+        - MYSQL_PASSWORD=iot
+      depends_on:
+        - mqtt
+        - mysql
+      volumes:
+        - .:/app
+volumes: 
+  mysql_data:
