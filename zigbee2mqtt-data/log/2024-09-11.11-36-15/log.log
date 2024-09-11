@@ -1,0 +1,26 @@
+[2024-09-11 11:36:15] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-09-11 11:36:15] info: 	z2m: Starting Zigbee2MQTT version 1.40.1 (commit #403d3c0)
+[2024-09-11 11:36:15] info: 	z2m: Starting zigbee-herdsman (0.57.3)
+[2024-09-11 11:36:16] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyUSB0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-09-11 11:36:16] info: 	zh:zstack:znp: Serialport opened
+[2024-09-11 11:36:16] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-09-11 11:36:16] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+[2024-09-11 11:36:16] info: 	z2m: Currently 0 devices are joined.
+[2024-09-11 11:36:16] info: 	z2m: Zigbee: disabling joining new devices.
+[2024-09-11 11:36:16] info: 	z2m: Connecting to MQTT server at mqtt://localhost
+[2024-09-11 11:36:17] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:17] error: 	z2m: MQTT failed to connect, exiting... (connect ECONNREFUSED ::1:1883)
+[2024-09-11 11:36:17] info: 	z2m: Stopping zigbee-herdsman...
+[2024-09-11 11:36:18] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:19] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:20] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:21] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:22] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:23] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:24] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:25] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:26] error: 	z2m: MQTT error: connect ECONNREFUSED ::1:1883
+[2024-09-11 11:36:26] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-09-11 11:36:26] info: 	zh:zstack:znp: closing
+[2024-09-11 11:36:26] info: 	zh:zstack:znp: Port closed
+[2024-09-11 11:36:26] info: 	z2m: Stopped zigbee-herdsman
