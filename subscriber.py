@@ -54,10 +54,14 @@ def send_aggregated_data():
         time.sleep(60)  # Attendre 1 minute
         with data_lock:
             if sensor_data:
-                aggregated_data = {}
+                aggregated_data = []
                 for sensor_id, readings in sensor_data.items():
-                    # Optionnel : vous pouvez traiter ou formater les données ici si nécessaire
-                    aggregated_data[sensor_id] = readings
+                    for reading in readings:
+                        aggregated_data.append({
+                            "sonde_id": sensor_id,
+                            "temperature":reading["temperature"],
+                            "timestamp":reading["timestamp"]
+                        })
 
                 # Ajouter les données à la file d'attente
                 data_queue.append(aggregated_data)
