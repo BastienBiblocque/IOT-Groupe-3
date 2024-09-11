@@ -4,4 +4,4 @@ mqtt:
   base_topic: zigbee2mqtt
   server: "mqtt://mosquitto:1883"
 serial:
-  port: /dev/ttyACM0
+  port: /dev/ttyUSB0
