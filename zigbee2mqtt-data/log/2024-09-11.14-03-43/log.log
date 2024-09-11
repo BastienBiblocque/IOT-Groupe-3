@@ -1,0 +1,45 @@
+[2024-09-11 14:03:43] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-09-11 14:03:43] info: 	z2m: Starting Zigbee2MQTT version 1.40.1 (commit #403d3c0)
+[2024-09-11 14:03:43] info: 	z2m: Starting zigbee-herdsman (0.57.3)
+[2024-09-11 14:03:44] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyUSB0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-09-11 14:03:44] info: 	zh:zstack:znp: Serialport opened
+[2024-09-11 14:03:44] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-09-11 14:03:44] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+[2024-09-11 14:03:44] info: 	z2m: Currently 0 devices are joined.
+[2024-09-11 14:03:44] info: 	z2m: Zigbee: disabling joining new devices.
+[2024-09-11 14:03:45] info: 	z2m: Connecting to MQTT server at mqtt://mqtt:1883
+[2024-09-11 14:03:45] info: 	z2m: Connected to MQTT server
+[2024-09-11 14:03:45] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2024-09-11 14:03:45] info: 	z2m: Started frontend on port 8080
+[2024-09-11 14:03:45] info: 	z2m: Zigbee2MQTT started!
+[2024-09-11 14:07:10] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 14:07:10] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"2itle-1"}'
+[2024-09-11 14:12:10] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 14:12:11] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"2itle-2"}'
+[2024-09-11 14:13:08] info: 	z2m: Starting network scan (includeRoutes 'false')
+[2024-09-11 14:13:09] info: 	z2m: Network scan finished
+[2024-09-11 14:13:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"raw","value":{"links":[],"nodes":[{"definition":null,"failed":[],"friendlyName":"Coordinator","ieeeAddr":"0x00124b0024c28d5b","networkAddress":0,"type":"Coordinator"}]}},"status":"ok","transaction":"2itle-3"}'
+[2024-09-11 14:16:27] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 14:16:27] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"2itle-4"}'
+[2024-09-11 14:19:28] info: 	z2m: Successfully changed options
+[2024-09-11 14:19:28] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/options', payload '{"data":{"restart_required":false},"status":"ok","transaction":"kq98a-1"}'
+[2024-09-11 14:19:32] info: 	z2m: Successfully changed options
+[2024-09-11 14:19:32] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/options', payload '{"data":{"restart_required":false},"status":"ok","transaction":"kq98a-2"}'
+[2024-09-11 14:20:42] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 14:20:43] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"kq98a-3"}'
+[2024-09-11 14:23:48] info: 	zh:controller: Interview for '0x543204fffe3350b4' started
+[2024-09-11 14:23:48] info: 	z2m: Device '0x543204fffe3350b4' joined
+[2024-09-11 14:23:48] info: 	z2m: Starting interview of '0x543204fffe3350b4'
+[2024-09-11 14:23:48] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe3350b4","ieee_address":"0x543204fffe3350b4"},"type":"device_joined"}'
+[2024-09-11 14:23:48] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe3350b4","ieee_address":"0x543204fffe3350b4","status":"started"},"type":"device_interview"}'
+[2024-09-11 14:23:48] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe3350b4","ieee_address":"0x543204fffe3350b4"},"type":"device_announce"}'
+[2024-09-11 14:24:09] info: 	zh:controller: Succesfully interviewed '0x543204fffe3350b4'
+[2024-09-11 14:24:09] info: 	z2m: Successfully interviewed '0x543204fffe3350b4', device has successfully been paired
+[2024-09-11 14:24:09] warning: 	z2m: Device '0x543204fffe3350b4' with Zigbee model 'undefined' and manufacturer name 'undefined' is NOT supported, please follow https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html
+[2024-09-11 14:24:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"definition":null,"friendly_name":"0x543204fffe3350b4","ieee_address":"0x543204fffe3350b4","status":"successful","supported":null},"type":"device_interview"}'
+[2024-09-11 14:26:42] info: 	z2m: Starting network scan (includeRoutes 'false')
+[2024-09-11 14:26:43] info: 	z2m: Network scan finished
+[2024-09-11 14:26:43] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"raw","value":{"links":[{"depth":1,"linkquality":116,"lqi":116,"relationship":1,"routes":[],"source":{"ieeeAddr":"0x543204fffe3350b4","networkAddress":2813},"sourceIeeeAddr":"0x543204fffe3350b4","sourceNwkAddr":2813,"target":{"ieeeAddr":"0x00124b0024c28d5b","networkAddress":0},"targetIeeeAddr":"0x00124b0024c28d5b"}],"nodes":[{"definition":null,"failed":[],"friendlyName":"Coordinator","ieeeAddr":"0x00124b0024c28d5b","networkAddress":0,"type":"Coordinator"},{"definition":null,"friendlyName":"0x543204fffe3350b4","ieeeAddr":"0x543204fffe3350b4","lastSeen":1726057449009,"networkAddress":2813,"type":"EndDevice"}]}},"status":"ok","transaction":"c10wb-1"}'
+[2024-09-11 14:27:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe3350b4', payload ''
+[2024-09-11 14:27:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/Groupe 1', payload '{"linkquality":117}'
+[2024-09-11 14:27:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/device/rename', payload '{"data":{"from":"0x543204fffe3350b4","homeassistant_rename":false,"to":"Groupe 1"},"status":"ok","transaction":"c10wb-2"}'
