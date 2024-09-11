@@ -14,3 +14,11 @@
 [2024-09-11 11:47:05] info: 	z2m: Zigbee2MQTT started!
 [2024-09-11 11:48:03] info: 	z2m: Zigbee: allowing new devices to join.
 [2024-09-11 11:48:03] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"40gkv-1"}'
+[2024-09-11 13:51:45] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2024-09-11 13:51:45] info: 	z2m: Disconnecting from MQTT server
+[2024-09-11 13:51:45] info: 	z2m: Stopping zigbee-herdsman...
+[2024-09-11 13:51:55] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-09-11 13:51:55] info: 	zh:zstack:znp: closing
+[2024-09-11 13:51:55] info: 	zh:zstack:znp: Port closed
+[2024-09-11 13:51:55] info: 	z2m: Stopped zigbee-herdsman
+[2024-09-11 13:51:55] info: 	z2m: Stopped Zigbee2MQTT

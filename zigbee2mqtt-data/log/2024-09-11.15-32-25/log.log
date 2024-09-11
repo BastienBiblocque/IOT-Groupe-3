@@ -1,0 +1,47 @@
+[2024-09-11 15:32:25] info: 	z2m: Logging to console, file (filename: log.log)
+[2024-09-11 15:32:25] info: 	z2m: Starting Zigbee2MQTT version 1.40.1 (commit #403d3c0)
+[2024-09-11 15:32:25] info: 	z2m: Starting zigbee-herdsman (0.57.3)
+[2024-09-11 15:32:25] info: 	zh:zstack:znp: Opening SerialPort with {"path":"/dev/ttyUSB0","baudRate":115200,"rtscts":false,"autoOpen":false}
+[2024-09-11 15:32:25] info: 	zh:zstack:znp: Serialport opened
+[2024-09-11 15:32:26] info: 	z2m: zigbee-herdsman started (resumed)
+[2024-09-11 15:32:26] info: 	z2m: Coordinator firmware version: '{"meta":{"maintrel":1,"majorrel":2,"minorrel":7,"product":1,"revision":20210708,"transportrev":2},"type":"zStack3x0"}'
+[2024-09-11 15:32:26] info: 	z2m: Groupe 1 (0x543204fffe3350b4): Not supported (EndDevice)
+[2024-09-11 15:32:26] info: 	z2m: Currently 1 devices are joined.
+[2024-09-11 15:32:26] info: 	z2m: Zigbee: disabling joining new devices.
+[2024-09-11 15:32:26] info: 	z2m: Connecting to MQTT server at mqtt://mqtt:1883
+[2024-09-11 15:32:26] info: 	z2m: Connected to MQTT server
+[2024-09-11 15:32:26] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"online"}'
+[2024-09-11 15:32:26] info: 	z2m: Started frontend on port 8080
+[2024-09-11 15:32:26] info: 	z2m: Zigbee2MQTT started!
+[2024-09-11 15:33:37] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 15:33:37] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"9kom0-1"}'
+[2024-09-11 15:35:58] info: 	zh:controller: Interview for '0xf0f5bdfffe2d1ea8' started
+[2024-09-11 15:35:58] info: 	z2m: Device '0xf0f5bdfffe2d1ea8' joined
+[2024-09-11 15:35:58] info: 	z2m: Starting interview of '0xf0f5bdfffe2d1ea8'
+[2024-09-11 15:35:58] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0xf0f5bdfffe2d1ea8","ieee_address":"0xf0f5bdfffe2d1ea8"},"type":"device_joined"}'
+[2024-09-11 15:35:58] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0xf0f5bdfffe2d1ea8","ieee_address":"0xf0f5bdfffe2d1ea8","status":"started"},"type":"device_interview"}'
+[2024-09-11 15:35:58] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0xf0f5bdfffe2d1ea8","ieee_address":"0xf0f5bdfffe2d1ea8"},"type":"device_announce"}'
+[2024-09-11 15:35:59] info: 	zh:controller: Succesfully interviewed '0xf0f5bdfffe2d1ea8'
+[2024-09-11 15:35:59] info: 	z2m: Successfully interviewed '0xf0f5bdfffe2d1ea8', device has successfully been paired
+[2024-09-11 15:35:59] warning: 	z2m: Device '0xf0f5bdfffe2d1ea8' with Zigbee model 'esp32c6' and manufacturer name 'ESPRESSIF' is NOT supported, please follow https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html
+[2024-09-11 15:35:59] info: 	z2m: Configuring '0xf0f5bdfffe2d1ea8'
+[2024-09-11 15:35:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"definition":{"description":"Automatically generated definition","exposes":[{"access":5,"description":"Measured temperature value","label":"Temperature","name":"temperature","property":"temperature","type":"numeric","unit":"°C"},{"access":1,"category":"diagnostic","description":"Link quality (signal strength)","label":"Linkquality","name":"linkquality","property":"linkquality","type":"numeric","unit":"lqi","value_max":255,"value_min":0}],"model":"esp32c6","options":[{"access":2,"description":"Calibrates the temperature value (absolute offset), takes into effect on next report of device.","label":"Temperature calibration","name":"temperature_calibration","property":"temperature_calibration","type":"numeric"},{"access":2,"description":"Number of digits after decimal point for temperature, takes into effect on next report of device. This option can only decrease the precision, not increase it.","label":"Temperature precision","name":"temperature_precision","property":"temperature_precision","type":"numeric","value_max":3,"value_min":0}],"supports_ota":false,"vendor":"ESPRESSIF"},"friendly_name":"0xf0f5bdfffe2d1ea8","ieee_address":"0xf0f5bdfffe2d1ea8","status":"successful","supported":false},"type":"device_interview"}'
+[2024-09-11 15:35:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":141,"temperature":27}'
+[2024-09-11 15:35:59] info: 	z2m: Successfully configured '0xf0f5bdfffe2d1ea8'
+[2024-09-11 15:36:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":72,"temperature":27}'
+[2024-09-11 15:36:19] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":84,"temperature":27}'
+[2024-09-11 15:36:29] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":57,"temperature":28}'
+[2024-09-11 15:36:39] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":42,"temperature":29}'
+[2024-09-11 15:37:30] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":60,"temperature":30}'
+[2024-09-11 15:37:40] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":12,"temperature":30}'
+[2024-09-11 15:38:00] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":51,"temperature":29}'
+[2024-09-11 15:38:14] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":60,"temperature":30}'
+[2024-09-11 15:38:24] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":72,"temperature":30}'
+[2024-09-11 15:38:37] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":69,"temperature":29}'
+[2024-09-11 15:38:47] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":69,"temperature":29}'
+[2024-09-11 15:39:03] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":63,"temperature":30}'
+[2024-09-11 15:39:13] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":48,"temperature":29}'
+[2024-09-11 15:39:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":3,"temperature":30}'
+[2024-09-11 15:40:44] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":9,"temperature":31}'
+[2024-09-11 15:41:01] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":39,"temperature":30}'
+[2024-09-11 15:41:11] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":60,"temperature":31}'
