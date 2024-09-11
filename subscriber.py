@@ -8,7 +8,8 @@ from collections import defaultdict, deque
 
 broker = "localhost"
 port = 1883
-topic_prefix = "sensors/temperature/#"  # Abonnement à tous les topics des sondes
+# topic_prefix = "sensors/temperature/#"  # Abonnement à tous les topics des sondes fictives
+topic_prefix = "zigbee2mqtt/#"
 HTTP_ENDPOINT = "http://localhost:5000/api/temperature"  # URL du backend
 
 # Buffer pour stocker les données des sondes
@@ -30,19 +31,19 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     try:
         data = json.loads(msg.payload)
-        sensor_id = data.get("sensor_id")
+        sensor_id = msg.topic.split('/')[-1]
         temperature = data.get("temperature")
 
-        if sensor_id and temperature is not None:
+        if temperature is not None:
             with data_lock:
-                # Ajouter la température au buffer pour la sonde correspondante
+                # Ajouter la température au buffer pour le périphérique correspondant
                 sensor_data[sensor_id].append({
                     "temperature": temperature,
                     "timestamp": time.time()  # Utiliser le timestamp Unix pour chaque mesure
                 })
             print(f"Received data: {data} from topic: {msg.topic}")
         else:
-            print("Invalid message format")
+            print(f"Invalid message format or no temperature data: {data}")
 
     except json.JSONDecodeError:
         print(f"Failed to decode message: {msg.payload.decode()}")
@@ -53,10 +54,14 @@ def send_aggregated_data():
         time.sleep(60)  # Attendre 1 minute
         with data_lock:
             if sensor_data:
-                aggregated_data = {}
+                aggregated_data = []
                 for sensor_id, readings in sensor_data.items():
-                    # Optionnel : vous pouvez traiter ou formater les données ici si nécessaire
-                    aggregated_data[sensor_id] = readings
+                    for reading in readings:
+                        aggregated_data.append({
+                            "sonde_id": sensor_id,
+                            "temperature":reading["temperature"],
+                            "timestamp":reading["timestamp"]
+                        })
 
                 # Ajouter les données à la file d'attente
                 data_queue.append(aggregated_data)

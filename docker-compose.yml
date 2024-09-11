@@ -1,0 +1,34 @@
+version: '3'
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt
+    container_name: zigbee2mqtt
+    volumes:
+      - ./zigbee2mqtt/data:/app/data
+      - /run/udev:/run/udev:ro
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0 # Changez cela selon votre clé USB Zigbee
+    depends_on:
+      - mosquitto
+    restart: always
+
+  subscriber:
+    build:
+      context: .
+      dockerfile: Dockerfile.subscriber
+    environment:
+      - MQTT_BROKER=mosquitto
+      - HTTP_ENDPOINT=http://backend:5000/api/temperature
+    depends_on:
+      - mosquitto
