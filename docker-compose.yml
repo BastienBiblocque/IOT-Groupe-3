@@ -26,7 +26,7 @@ services:
   publisher:
     build:
       context: .
-      dockerfile: Dockerfile-publisher
+      dockerfile: Dockerfile.publisher
     environment:
       - MQTT_BROKER=mosquitto
     depends_on:
@@ -35,7 +35,7 @@ services:
   subscriber:
     build:
       context: .
-      dockerfile: Dockerfile-subscriber
+      dockerfile: Dockerfile.subscriber
     environment:
       - MQTT_BROKER=mosquitto
       - HTTP_ENDPOINT=http://backend:5000/api/temperature
@@ -46,6 +46,6 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile-backend
+      dockerfile: Dockerfile.backend
     ports:
       - "5000:5000"
