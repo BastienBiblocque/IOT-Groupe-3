@@ -4,8 +4,8 @@
 
 - Installer Moquitto https://mosquitto.org/download/
 - Lancer Mosquitto `mosquitto -v`
-- Lancer Publisher `python3 publisher.py`
-- Lancer Subscriber `python3 subscriber.py`
+- Lancer Publisher `python3 publisher.py` (Pour tester le fonctionnement du subscriber, en version finale, le publisher sera zeegbee2mqtt qui receptionnera les données des sondes)
+- Lancer Subscriber `python3 subscriber.py` (En version test avec le publisher: topic_prefix = "sensors/temperature/#"; en version finale avec la sonde: topic_prefix = "zigbee2mqtt/#")
 
 #### Pour tester la solution sans sonde et sans backend receveur:
 
@@ -31,5 +31,5 @@ time.sleep(10)`
 ### Version local avec Python :
 
 - Installer `paho.mqtt.client`
-- Le fichier publisher remplace la fonction publisher, de même pour la veersion subscriber
+- Le fichier publisher remplace la fonction publisher, de même pour la version subscriber
 - Dans tout les cas on a besoin de Mosquitto et de `mosquitto -v`

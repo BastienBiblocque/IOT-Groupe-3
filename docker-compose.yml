@@ -22,15 +22,6 @@ services:
     depends_on:
       - mosquitto
     restart: always
-  
-  publisher:
-    build:
-      context: .
-      dockerfile: Dockerfile.publisher
-    environment:
-      - MQTT_BROKER=mosquitto
-    depends_on:
-      - mosquitto
 
   subscriber:
     build:
@@ -42,10 +33,3 @@ services:
     depends_on:
       - mosquitto
       - backend
-
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
-    ports:
-      - "5000:5000"

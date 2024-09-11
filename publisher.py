@@ -3,6 +3,8 @@ import json
 import time
 import random
 
+# Fichier utilisé pour tester le broken avec des données fictives
+
 broker = "localhost"
 port = 1883
 topic_prefix = "sensors/temperature/"
