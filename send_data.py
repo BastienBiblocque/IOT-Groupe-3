@@ -1,16 +1,17 @@
 import requests
 import mysql.connector
 from datetime import datetime
-import time
 
-HTTP_ENDPOINT = "http://localhost:5000/api/temperature"
+HTTP_ENDPOINT = "http://host.docker.internal:5000/api/temperature"
+
 
 # Connexion à la base de données MySQL
 db_config = {
     'user': 'iot',
     'password': 'iot',
-    'host': 'mysql',  # Nom du service dans docker-compose
-    'database': 'sensor_data',
+    'host': 'mysql',
+    'port':3306,
+    'database': 'temperatures_data',
 }
 
 def connect_db():
@@ -67,6 +68,8 @@ def update_sent_data(sensor_ids):
 
 def send_data():
     data_to_send = fetch_data_to_send()
+
+    print(data_to_send)
     
     if not data_to_send["sondeTemperatureDtoList"]:
         print("No data to send.")

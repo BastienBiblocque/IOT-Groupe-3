@@ -4,7 +4,7 @@ from datetime import datetime
 import time
 import mysql.connector
 
-broker = "localhost"
+broker = "mqtt"
 port = 1883
 # topic_prefix = "sensors/temperature/#"  # Abonnement à tous les topics des sondes fictives
 topic_prefix = "zigbee2mqtt/#"
