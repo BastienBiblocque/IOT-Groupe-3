@@ -13,7 +13,8 @@ topic_prefix = "zigbee2mqtt/#"
 db_config = {
     'user': 'iot',
     'password': 'iot',
-    'host': 'mysql',  # Nom du service dans docker-compose
+    'host': 'mysql',
+    'port':3306,
     'database': 'temperatures_data',
 }
 
