@@ -3,6 +3,7 @@ import mysql.connector
 from datetime import datetime
 
 HTTP_ENDPOINT = "http://host.docker.internal:5000/api/temperature"
+headers = {'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c', 'Content-Type': 'application/json'}
 
 
 # Connexion à la base de données MySQL
@@ -76,8 +77,8 @@ def send_data():
         return
 
     try:
-        response = requests.post(HTTP_ENDPOINT, json=data_to_send)
-        response.raise_for_status()  # Vérifie si la requête a échoué
+        response = requests.post(HTTP_ENDPOINT, json=data_to_send, headers=headers)
+        response.raise_for_status()
         print("Data sent successfully.")
         
         # Mettre à jour la base de données après envoi réussi

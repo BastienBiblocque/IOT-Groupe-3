@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 @app.route('/api/temperature', methods=['POST'])
 def receive_temperature():
+    headers = request.headers
+    print(f"Headers : ", headers)
     data = request.json
     print(f"Received data: {data}")
     return jsonify({"status": "success", "received": data}), 200
