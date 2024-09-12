@@ -2,7 +2,7 @@ import requests
 import mysql.connector
 from datetime import datetime
 
-HTTP_ENDPOINT = "http://host.docker.internal:5000/api/temperature"
+HTTP_ENDPOINT = "https://iot.learn-it.ovh/api/app/passerelle/batch-mesures"
 headers = {'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c', 'Content-Type': 'application/json'}
 
 
