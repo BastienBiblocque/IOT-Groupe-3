@@ -36,11 +36,11 @@ try:
             data = get_sensor_data(f"sensor_{sensor_id}")
             topic = topic_prefix + data["sensor_id"]
             message = json.dumps(data)
-            # client.publish(topic, message)
-            # print(f"Published: {message} to topic: {topic}")
+            client.publish(topic, message)
+            print(f"Published: {message} to topic: {topic}")
 
         # Pause de 30 secondes entre chaque envoi
-        time.sleep(30)
+        time.sleep(10)
 
 except KeyboardInterrupt:
     print("Stopping publisher...")

@@ -25,7 +25,7 @@ def fetch_data_to_send():
     
     # Sélectionner les données à envoyer (sans sending_timestamp)
     select_query = """
-    SELECT sensor_id, temperature, measure_timestamp
+    SELECT *
     FROM sensor_data
     WHERE sending_timestamp IS NULL
     """
@@ -40,6 +40,7 @@ def fetch_data_to_send():
     
     for row in rows:
         data["sondeTemperatureDtoList"].append({
+            "id": row["id"],
             "sonde_id": row["sensor_id"],
             "temperature": row["temperature"],
             "timestamp": int(row["measure_timestamp"].timestamp())  # Convertir en timestamp Unix
@@ -58,7 +59,7 @@ def update_sent_data(sensor_ids):
     update_query = """
     UPDATE sensor_data
     SET sending_timestamp = NOW()
-    WHERE sensor_id IN (%s)
+    WHERE id IN (%s)
     """
     
     format_strings = ','.join(['%s'] * len(sensor_ids))
@@ -83,7 +84,7 @@ def send_data():
         print("Data sent successfully.")
         
         # Mettre à jour la base de données après envoi réussi
-        sensor_ids = [item["sonde_id"] for item in data_to_send["sondeTemperatureDtoList"]]
+        sensor_ids = [item["id"] for item in data_to_send["sondeTemperatureDtoList"]]
         update_sent_data(sensor_ids)
     
     except requests.exceptions.RequestException as e:
