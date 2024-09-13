@@ -2,7 +2,8 @@ import requests
 import mysql.connector
 from datetime import datetime
 
-HTTP_ENDPOINT = "https://iot.learn-it.ovh/api/app/passerelle/batch-mesures"
+# HTTP_ENDPOINT = "https://iot.learn-it.ovh/api/app/passerelle/batch-mesures"
+HTTP_ENDPOINT = "http://host.docker.internal:5000/api/temperature"
 headers = {'Authorization':'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c', 'Content-Type': 'application/json'}
 
 
@@ -33,7 +34,7 @@ def fetch_data_to_send():
     
     # Grouper les données par passerelle
     data = {
-        "passerellePhysicalId": "passerelle_1",
+        "passerellePhysicalId": "3a14fce7-b0a6-8f40-fbff-44e11a57419a",
         "sondeTemperatureDtoList": []
     }
     
