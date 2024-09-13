@@ -7,7 +7,7 @@ import random
 
 broker = "localhost"
 port = 1883
-topic_prefix = "zigbee2mqtt/"
+topic_prefix = "zigbee2mqtt/test"
 
 # Fonction pour simuler la récupération de données de différentes sondes
 def get_sensor_data(sensor_id):
