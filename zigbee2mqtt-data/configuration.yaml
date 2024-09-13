@@ -39,7 +39,9 @@ advanced:
 device_options:
   legacy: false
 devices:
-  '0x543204fffe3350b4':
-    friendly_name: Groupe 1
   '0xf0f5bdfffe2d1ea8':
     friendly_name: '0xf0f5bdfffe2d1ea8'
+  '0x543204fffe335684':
+    friendly_name: '0x543204fffe335684'
+  '0x543204fffe3350b4':
+    friendly_name: '0x543204fffe3350b4'

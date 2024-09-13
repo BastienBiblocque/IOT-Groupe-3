@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY subscriber.py .
 
 # Commande exécutée au démarrage du conteneur
-CMD ["python3", "subscriber.py"]
+CMD ["python3","-u", "subscriber.py"]

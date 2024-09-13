@@ -1,6 +1,14 @@
 {
-    "0x543204fffe3350b4": {},
     "0xf0f5bdfffe2d1ea8": {
-        "temperature": 31
+        "temperature": 33,
+        "linkquality": 192
+    },
+    "0x543204fffe335684": {
+        "temperature": 23.37,
+        "linkquality": 78
+    },
+    "0x543204fffe3350b4": {
+        "temperature": 43.56,
+        "linkquality": 132
     }
 }
