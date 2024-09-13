@@ -33,7 +33,7 @@ def fetch_data_to_send():
     
     # Grouper les données par passerelle
     data = {
-        "passerellePhysicalId": "passerelle_1",
+        "passerellePhysicalId": "3a14fce7-b0a6-8f40-fbff-44e11a57419a",
         "sondeTemperatureDtoList": []
     }
     

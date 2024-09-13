@@ -45,3 +45,46 @@
 [2024-09-11 15:40:44] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":9,"temperature":31}'
 [2024-09-11 15:41:01] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":39,"temperature":30}'
 [2024-09-11 15:41:11] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload '{"linkquality":60,"temperature":31}'
+[2024-09-11 16:13:46] info: 	z2m: Zigbee: allowing new devices to join.
+[2024-09-11 16:13:46] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/permit_join', payload '{"data":{"time":254,"value":true},"status":"ok","transaction":"0t99y-1"}'
+[2024-09-11 16:15:12] info: 	zh:controller: Interview for '0x543204fffe335684' started
+[2024-09-11 16:15:12] info: 	z2m: Device '0x543204fffe335684' joined
+[2024-09-11 16:15:12] info: 	z2m: Starting interview of '0x543204fffe335684'
+[2024-09-11 16:15:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe335684","ieee_address":"0x543204fffe335684"},"type":"device_joined"}'
+[2024-09-11 16:15:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe335684","ieee_address":"0x543204fffe335684","status":"started"},"type":"device_interview"}'
+[2024-09-11 16:15:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"friendly_name":"0x543204fffe335684","ieee_address":"0x543204fffe335684"},"type":"device_announce"}'
+[2024-09-11 16:15:13] info: 	zh:controller: Succesfully interviewed '0x543204fffe335684'
+[2024-09-11 16:15:13] info: 	z2m: Successfully interviewed '0x543204fffe335684', device has successfully been paired
+[2024-09-11 16:15:13] warning: 	z2m: Device '0x543204fffe335684' with Zigbee model 'esp32c6' and manufacturer name 'ESPRESSIF' is NOT supported, please follow https://www.zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html
+[2024-09-11 16:15:13] info: 	z2m: Configuring '0x543204fffe335684'
+[2024-09-11 16:15:13] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/event', payload '{"data":{"definition":{"description":"Automatically generated definition","exposes":[{"access":5,"description":"Measured temperature value","label":"Temperature","name":"temperature","property":"temperature","type":"numeric","unit":"°C"},{"access":1,"category":"diagnostic","description":"Link quality (signal strength)","label":"Linkquality","name":"linkquality","property":"linkquality","type":"numeric","unit":"lqi","value_max":255,"value_min":0}],"model":"esp32c6","options":[{"access":2,"description":"Calibrates the temperature value (absolute offset), takes into effect on next report of device.","label":"Temperature calibration","name":"temperature_calibration","property":"temperature_calibration","type":"numeric"},{"access":2,"description":"Number of digits after decimal point for temperature, takes into effect on next report of device. This option can only decrease the precision, not increase it.","label":"Temperature precision","name":"temperature_precision","property":"temperature_precision","type":"numeric","value_max":3,"value_min":0}],"supports_ota":false,"vendor":"ESPRESSIF"},"friendly_name":"0x543204fffe335684","ieee_address":"0x543204fffe335684","status":"successful","supported":false},"type":"device_interview"}'
+[2024-09-11 16:15:13] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":189,"temperature":32}'
+[2024-09-11 16:15:13] info: 	z2m: Successfully configured '0x543204fffe335684'
+[2024-09-11 16:15:23] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":18,"temperature":32}'
+[2024-09-11 16:15:46] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":69,"temperature":33}'
+[2024-09-11 16:15:56] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":72,"temperature":33}'
+[2024-09-11 16:16:00] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0xf0f5bdfffe2d1ea8', payload ''
+[2024-09-11 16:16:00] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/temperature', payload '{"linkquality":60,"temperature":31}'
+[2024-09-11 16:16:00] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/device/rename', payload '{"data":{"from":"0xf0f5bdfffe2d1ea8","homeassistant_rename":false,"to":"temperature"},"status":"ok","transaction":"2m9t7-1"}'
+[2024-09-11 16:16:12] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":66,"temperature":34}'
+[2024-09-11 16:16:59] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":72,"temperature":35}'
+[2024-09-11 16:17:09] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":54,"temperature":34}'
+[2024-09-11 16:17:19] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":66,"temperature":35}'
+[2024-09-11 16:18:43] info: 	z2m: Starting network scan (includeRoutes 'false')
+[2024-09-11 16:18:44] info: 	z2m: Network scan finished
+[2024-09-11 16:18:44] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/response/networkmap', payload '{"data":{"routes":false,"type":"raw","value":{"links":[{"depth":1,"linkquality":170,"lqi":170,"relationship":1,"routes":[],"source":{"ieeeAddr":"0x543204fffe3350b4","networkAddress":2813},"sourceIeeeAddr":"0x543204fffe3350b4","sourceNwkAddr":2813,"target":{"ieeeAddr":"0x00124b0024c28d5b","networkAddress":0},"targetIeeeAddr":"0x00124b0024c28d5b"},{"depth":1,"linkquality":40,"lqi":40,"relationship":1,"routes":[],"source":{"ieeeAddr":"0xf0f5bdfffe2d1ea8","networkAddress":46693},"sourceIeeeAddr":"0xf0f5bdfffe2d1ea8","sourceNwkAddr":46693,"target":{"ieeeAddr":"0x00124b0024c28d5b","networkAddress":0},"targetIeeeAddr":"0x00124b0024c28d5b"},{"depth":1,"linkquality":64,"lqi":64,"relationship":1,"routes":[],"source":{"ieeeAddr":"0x543204fffe335684","networkAddress":30480},"sourceIeeeAddr":"0x543204fffe335684","sourceNwkAddr":30480,"target":{"ieeeAddr":"0x00124b0024c28d5b","networkAddress":0},"targetIeeeAddr":"0x00124b0024c28d5b"}],"nodes":[{"definition":null,"failed":[],"friendlyName":"Coordinator","ieeeAddr":"0x00124b0024c28d5b","networkAddress":0,"type":"Coordinator"},{"definition":null,"friendlyName":"Groupe 1","ieeeAddr":"0x543204fffe3350b4","lastSeen":1726057449009,"networkAddress":2813,"type":"EndDevice"},{"definition":{"description":"Automatically generated definition","model":"esp32c6","supports":"temperature, linkquality","vendor":"ESPRESSIF"},"friendlyName":"temperature","ieeeAddr":"0xf0f5bdfffe2d1ea8","lastSeen":1726062071215,"manufacturerName":"ESPRESSIF","modelID":"esp32c6","networkAddress":46693,"type":"EndDevice"},{"definition":{"description":"Automatically generated definition","model":"esp32c6","supports":"temperature, linkquality","vendor":"ESPRESSIF"},"friendlyName":"0x543204fffe335684","ieeeAddr":"0x543204fffe335684","lastSeen":1726064239507,"manufacturerName":"ESPRESSIF","modelID":"esp32c6","networkAddress":30480,"type":"EndDevice"}]}},"status":"ok","transaction":"2m9t7-2"}'
+[2024-09-11 16:23:22] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":78,"temperature":36}'
+[2024-09-11 16:23:32] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":78,"temperature":36}'
+[2024-09-11 16:23:42] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":81,"temperature":36}'
+[2024-09-11 16:23:58] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":78,"temperature":35}'
+[2024-09-11 16:24:08] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":78,"temperature":36}'
+[2024-09-11 16:25:35] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":66,"temperature":35}'
+[2024-09-11 16:25:45] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/0x543204fffe335684', payload '{"linkquality":60,"temperature":36}'
+[2024-09-12 08:31:47] info: 	z2m:mqtt: MQTT publish: topic 'zigbee2mqtt/bridge/state', payload '{"state":"offline"}'
+[2024-09-12 08:31:47] info: 	z2m: Disconnecting from MQTT server
+[2024-09-12 08:31:47] info: 	z2m: Stopping zigbee-herdsman...
+[2024-09-12 08:31:57] info: 	zh:controller: Wrote coordinator backup to '/app/data/coordinator_backup.json'
+[2024-09-12 08:31:57] info: 	zh:zstack:znp: closing
+[2024-09-12 08:31:57] info: 	zh:zstack:znp: Port closed
+[2024-09-12 08:31:57] info: 	z2m: Stopped zigbee-herdsman
+[2024-09-12 08:31:57] info: 	z2m: Stopped Zigbee2MQTT
