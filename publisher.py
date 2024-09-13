@@ -7,7 +7,7 @@ import random
 
 broker = "localhost"
 port = 1883
-topic_prefix = "zigbee2mqtt/test"
+topic_prefix = "zigbee2mqtt/test/"
 
 # Fonction pour simuler la récupération de données de différentes sondes
 def get_sensor_data(sensor_id):
@@ -32,15 +32,15 @@ client.loop_start()  # Démarrer la boucle pour gérer la connexion
 try:
     while True:
         # Simuler l'envoi des données de 3 sondes
-        for sensor_id in range(1, 4):
+        for sensor_id in range(1, 3):
             data = get_sensor_data(f"sensor_{sensor_id}")
             topic = topic_prefix + data["sensor_id"]
             message = json.dumps(data)
             client.publish(topic, message)
             print(f"Published: {message} to topic: {topic}")
 
-        # Pause de 10 secondes entre chaque envoi
-        time.sleep(10)
+        # Pause de 30 secondes entre chaque envoi
+        time.sleep(30)
 
 except KeyboardInterrupt:
     print("Stopping publisher...")

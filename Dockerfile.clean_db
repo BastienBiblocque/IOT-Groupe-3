@@ -7,29 +7,30 @@ RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*
 # Créer un répertoire pour les scripts
 WORKDIR /app
 
-# Copier les fichiers du projet
+# Copier le script dans le conteneur
 COPY requirements_cron.txt /app/
-COPY send_data.py /app/
+COPY clean_db.py /app/
 
 # Installer les dépendances Python
 RUN pip install --no-cache-dir -r requirements_cron.txt
 
 # Copier le fichier de configuration du cron dans le conteneur
-COPY cronjob /etc/cron.d/send_data
+COPY cronjob /etc/cron.d/clean_db
 
 # Donner les permissions nécessaires au fichier cron
-RUN chmod 0644 /etc/cron.d/send_data
+RUN chmod 0644 /etc/cron.d/clean_db
 
 # Appliquer le cron au système
-RUN crontab /etc/cron.d/send_data
+RUN crontab /etc/cron.d/clean_db
 
 # Appliquer les permissions nécessaires pour le script Python
-RUN chmod +x /app/send_data.py
+RUN chmod +x /app/clean_db.py
 
 # Créer un répertoire pour les logs de cron
 RUN mkdir -p /var/log/cron
 
 # Créer un fichier de log vide pour cron
-RUN touch /var/log/cron/cron_send_data.log
+RUN touch /var/log/cron/cron_clean_db.log
 
-CMD ["sh", "-c", "cron && tail -f /var/log/cron/cron_send_data.log"]
+# Lancer cron en arrière-plan et suivre les logs
+CMD ["sh", "-c", "cron && tail -f /var/log/cron/cron_clean_db.log"]

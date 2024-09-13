@@ -1,1 +1,2 @@
-* * * * * /usr/local/bin/python3 /app/send_data.py >> /var/log/cron/cron.log 2>&1
+* * * * * /usr/local/bin/python3 /app/send_data.py >> /var/log/cron/cron_send_data.log 2>&1
+00 14 * * * /usr/local/bin/python3 /app/clean_db.py >> /var/log/cron/cron_clean_db.log 2>&1
